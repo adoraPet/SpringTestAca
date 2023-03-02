@@ -1,0 +1,5 @@
+package io.adorapet.test.jsp.dao;
+
+public interface RealtorDAO {
+
+}

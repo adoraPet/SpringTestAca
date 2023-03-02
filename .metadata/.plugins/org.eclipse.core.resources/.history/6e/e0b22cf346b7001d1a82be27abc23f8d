@@ -1,0 +1,25 @@
+package io.adorapet.test.jsp.bo;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import io.adorapet.test.jsp.dao.SellerDAO;
+
+@Service
+public class RealorBO {
+	
+	@Autowired
+	private Re sellerDAO;
+	
+	public int addSeller(
+			String nickname
+			, String profileImage
+			, double temperature) {
+	
+		return sellerDAO.insertSeller(
+				nickname
+				, profileImage
+				, temperature);
+	}
+
+}

@@ -1,0 +1,5 @@
+package io.adorapet.test.mybatis.dao;
+
+public interface RealEstateDAO {
+
+}
