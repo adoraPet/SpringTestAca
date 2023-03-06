@@ -4,7 +4,6 @@ import java.util.Date;
 
 public class Weather {
 	
-	private Date date;
 	private Date updatedAt;
 	private Date createdAt;
 	private String weather;
@@ -12,13 +11,6 @@ public class Weather {
 	private double temperatures;
 	private double precipitation;
 	private double windSpeed;
-	
-	public Date getDate() {
-		return date;
-	}
-	public void setDate(Date date) {
-		this.date = date;
-	}
 	public Date getUpdatedAt() {
 		return updatedAt;
 	}
