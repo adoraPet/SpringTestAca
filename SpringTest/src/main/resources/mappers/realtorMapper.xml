@@ -8,19 +8,23 @@
   
   	<insert id="insertRealtorByObject" parameterType="io.adorapet.test.jsp.model.Realtor"
   	useGeneratedKeys="true" keyProperty="id">
- 		INSERT INTO `realtor`(
-			`office`
-			, `phoneNumber`
-			, `address`
-			, `grade`
+ 		INSERT INTO `weatherhistory`(
+			`date`
+			, `weather`
+			, `temperatures`
+			, `precipitation`
+			, `microdust`
+			, `windSpeed`
 			, `createdAt`
 			, `updatedAt`
 			)
 		VALUES (
-			#{office}
-			,#{phoneNumber}
-			,#{address}
-			,#{grade}
+			#{date}
+			,#{weather}
+			,#{temperatures}
+			,#{precipitation}
+			,#{microDust}
+			,#{windSpeed}
 			,now()
 			,now()
 			)

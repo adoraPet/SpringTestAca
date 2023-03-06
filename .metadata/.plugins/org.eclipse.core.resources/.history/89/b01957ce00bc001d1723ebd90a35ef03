@@ -1,0 +1,5 @@
+package io.adorapet.test.all.dao;
+
+public interface WeatherDAO {
+
+}

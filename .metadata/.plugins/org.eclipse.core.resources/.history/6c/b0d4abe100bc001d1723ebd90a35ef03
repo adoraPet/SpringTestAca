@@ -1,0 +1,12 @@
+package io.adorapet.test.all.dao;
+
+import org.springframework.stereotype.Repository;
+
+import io.adorapet.test.jsp.model.Realtor;
+
+@Repository
+public interface WeatherDAO {
+	
+	public int insertWeatherByObject(Realtor realtor);
+
+}

@@ -1,0 +1,27 @@
+package io.adorapet.test.jstl;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@Controller
+@RequestMapping("/jstlFmt")
+public class JSTLFmtController {
+	
+	@GetMapping("/test01")
+	public String test01(Model model) {
+		
+		List<Integer> candidates = new ArrayList<>();
+		candidates.add(263001);
+		candidates.add(173942); 
+		candidates.add(563057); 
+
+		model.addAttribute("candidates",candidates);
+		return "jstl/fmt1";
+	}
+
+}

@@ -1,0 +1,5 @@
+package io.adorapet.test.jstl.model;
+
+public class JSTLFn {
+
+}

@@ -1,0 +1,48 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>회원정보 리스트</title>
+</head>
+<body>
+	<table border="1">
+		<thead>
+			<tr>
+				<th>No</th>
+				<th>이름</th>	
+				<th>전화번호</th>	
+				<th>국적</th>	
+				<th>이메일</th>	
+				<th>자기소개</th>	
+			</tr>
+		</thead>
+		<tbody>
+			<c:forEach var="member" items="${memberList}">
+			<tr>
+				<td>${member.no }</td>
+				<td>${member.name }</td>
+				<c:choose>
+				<c:when test=${fn:startsWith(member.phoneNumebr, "010") }">
+				<td>유효하지 않은 전화번호</td>
+				</c:when>
+				<c:otherwise>
+				<td>${member.phoneNumber }</td>
+				</c:otherwise>
+				</c:choose>
+				<td>${member.nationality }</td>
+				<td>${member.email }</td>
+				<td>${member.introduce }</td>
+			</tr>
+			</c:forEach>
+		</tbody>
+	
+	
+	</table>
+
+</body>
+</html>
