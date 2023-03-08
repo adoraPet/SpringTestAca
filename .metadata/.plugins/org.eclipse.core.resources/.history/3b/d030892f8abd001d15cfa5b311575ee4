@@ -1,0 +1,19 @@
+package io.adorapet.test.ajax;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@Controller
+@RequestMapping("/ajax/user")
+public class NewUserController {
+	
+	@GetMapping("/list")
+	public String userList() {
+		
+		return "ajax/user/list";
+	}
+	
+	
+
+}

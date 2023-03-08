@@ -27,7 +27,8 @@
 	</select>
 	<insert id="insertRealEstate" parameterType="int">
 	
-		INSERT INTO `real_estate`(
+		INSERT INTO 
+		`real_estate`(
 			`id`
 			, `realtorId`
 			, `address`

@@ -1,0 +1,45 @@
+package io.adorapet.test.all;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
+import io.adorapet.test.all.bo.WeatherBO;
+import io.adorapet.test.all.model.Weather;
+
+@Controller
+@RequestMapping("/all/weather")
+public class WeatherController {
+	
+	@Autowired
+	private WeatherBO weatherBO;
+	
+	@GetMapping("/add")
+	public String addWeather(
+			@DateTimeFormat("yyyy년 MM월 dd일")
+			@ModelAttribute Weather weather
+			, Model model) {
+		
+		
+		
+		model.addAttribute("weather", weather);
+		
+		
+		int count = weatherBO.addWeather(weather);
+		
+		
+		return "jstl/weatherpage";
+	}
+	
+	@GetMapping("/input")
+	public String weatherInput() {
+		return "jstl/weatherInput";
+	}
+
+}

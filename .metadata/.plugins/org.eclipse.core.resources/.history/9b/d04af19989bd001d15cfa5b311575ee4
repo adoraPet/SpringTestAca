@@ -1,0 +1,12 @@
+package io.adorapet.test.ajax;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+@Service
+public class UserBO {
+	
+	@Autowired
+	private 
+
+}

@@ -1,0 +1,62 @@
+package io.adorapet.test.all;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
+import io.adorapet.test.all.bo.WeatherBO;
+import io.adorapet.test.all.model.Weather;
+
+@Controller
+@RequestMapping("/all/weather")
+public class WeatherController {
+	
+	@Autowired
+	private WeatherBO weatherBO;
+	
+	@PostMapping("/add")
+	public String addWeather(
+			@RequestParam("date") String date
+			,@RequestParam("weather") String weather
+			,@RequestParam("temperatures") double temperatures
+			,@RequestParam("precipitation") double precipitation
+			,@RequestParam("microDust") String microDust
+			,@RequestParam("windSpeed") double windSpeed
+			, Model model) {
+		
+		Weather newWeather = new Weather();
+		newWeather.setDate(date);
+		newWeather.setWeather(weather);
+		newWeather.setTemperatures(temperatures);
+		newWeather.setPrecipitation(precipitation);
+		newWeather.setMicroDust(microDust);
+		newWeather.setWindSpeed(windSpeed);
+		
+		model.addAttribute("weather", newWeather);
+		
+		
+		int count = weatherBO.addWeather(
+				date
+				, weather
+				, temperatures
+				, precipitation
+				, microDust
+				, windSpeed
+				);
+		
+		model.addAttribute("seller", seller);
+		
+		return "jsp/weatherpage";
+	}
+	
+	@GetMapping("/input")
+	public String weatherInput() {
+		return "/weatherinput";
+	}
+
+}

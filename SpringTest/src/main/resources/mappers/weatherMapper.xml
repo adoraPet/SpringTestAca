@@ -4,27 +4,51 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
   
-  <insert id="insertWeatherByObject" parameterType="io.adorapet.test.jsp.model.Weather"
-  	useGeneratedKeys="true" keyProperty="id">
- 		INSERT INTO `weatherhistory`(
+<mapper namespace="io.adorapet.test.all.dao.WeatherDAO">
+
+	<select id="selectWeather" resultType="io.adorapet.test.all.model.Weather">
+		SELECT 
+			`id`
+			, `date`
+			, `weather`
+			, `temperatures`
+			, `precipitation`
+			, `microDust`
+			, `windSpeed`
+			, `createdAt`
+			, `updatedAt`
+		FROM
+			`weatherhistory`
+	</select>
+	
+	<insert id="insertWeather" parameterType="map">
+		INSERT INTO 
+			`weatherhistory`
+		(
 			`date`
 			, `weather`
 			, `temperatures`
 			, `precipitation`
-			, `microdust`
+			, `microDust`
 			, `windSpeed`
 			, `createdAt`
 			, `updatedAt`
-			)
-		VALUES (
+		)
+		VALUE 
+		(
 			#{date}
-			,#{weather}
-			,#{temperatures}
-			,#{precipitation}
-			,#{microDust}
-			,#{windSpeed}
-			,now()
-			,now()
-			)
+			, #{weather}
+			, #{temperatures}
+			, #{precipitation}
+			, #{microDust}
+			, #{windSpeed}
+			, now()
+			, now()
+		)
+		
+	
 	</insert>
+
+
+</mapper>
  			

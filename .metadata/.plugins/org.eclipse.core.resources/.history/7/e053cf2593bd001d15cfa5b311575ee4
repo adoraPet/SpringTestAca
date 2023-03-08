@@ -1,0 +1,10 @@
+package io.adorapet.test.ajax.test.model;
+
+public class Favorite {
+	
+	private String name;
+	private String address;
+	
+	
+
+}

@@ -2,34 +2,30 @@ package io.adorapet.test.all.model;
 
 import java.util.Date;
 
+import java.util.Date;
+
 public class Weather {
-	
-	private Date date;
-	private Date updatedAt;
-	private Date createdAt;
+	private int id;
 	private String weather;
-	private String microDust;
+	private String date;
 	private double temperatures;
 	private double precipitation;
+	private String microDust;
 	private double windSpeed;
+	private Date createdAt;
+	private Date updatedAt;
 	
-	public Date getDate() {
+	public String getDate() {
 		return date;
 	}
-	public void setDate(Date date) {
+	public void setDate(String date) {
 		this.date = date;
 	}
-	public Date getUpdatedAt() {
-		return updatedAt;
+	public int getId() {
+		return id;
 	}
-	public void setUpdatedAt(Date updatedAt) {
-		this.updatedAt = updatedAt;
-	}
-	public Date getCreatedAt() {
-		return createdAt;
-	}
-	public void setCreatedAt(Date createdAt) {
-		this.createdAt = createdAt;
+	public void setId(int id) {
+		this.id = id;
 	}
 	public String getWeather() {
 		return weather;
@@ -37,12 +33,7 @@ public class Weather {
 	public void setWeather(String weather) {
 		this.weather = weather;
 	}
-	public String getMicroDust() {
-		return microDust;
-	}
-	public void setMicroDust(String microDust) {
-		this.microDust = microDust;
-	}
+	
 	public double getTemperatures() {
 		return temperatures;
 	}
@@ -55,16 +46,28 @@ public class Weather {
 	public void setPrecipitation(double precipitation) {
 		this.precipitation = precipitation;
 	}
+	public String getMicroDust() {
+		return microDust;
+	}
+	public void setMicroDust(String microDust) {
+		this.microDust = microDust;
+	}
 	public double getWindSpeed() {
 		return windSpeed;
 	}
 	public void setWindSpeed(double windSpeed) {
 		this.windSpeed = windSpeed;
 	}
-	
-	
-	
-	
-	
-
+	public Date getCreatedAt() {
+		return createdAt;
+	}
+	public void setCreatedAt(Date createdAt) {
+		this.createdAt = createdAt;
+	}
+	public Date getUpdatedAt() {
+		return updatedAt;
+	}
+	public void setUpdatedAt(Date updatedAt) {
+		this.updatedAt = updatedAt;
+	}
 }
