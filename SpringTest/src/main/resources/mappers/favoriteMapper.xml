@@ -6,8 +6,7 @@
   
   <mapper namespace="io.adorapet.test.ajax.test.dao.FavoriteDAO">
   
-  <insert id="insertFavorite" parameterType="io.adorapet.test.ajax.test.model.Favorite"
-  useGeneratedKeys="true" keyProperty="id">>
+  <insert id="insertFavorite" parameterType="map">
   	INSERT INTO
 			`favorite`
 		(
@@ -26,19 +25,29 @@
   
   </insert>
   
-  <select id="selectFavorite" parameterType="int"
-	resultType="io.adorapet.test.ajax.test.model.Favorite">
+  <select id="selectFavoriteList" resultType="io.adorapet.test.ajax.test.model.Favorite">
 		SELECT
 			`id`
-			, `nickname`
-			, `profileImage`
-			, `temperature`
+			, `name`
+			, `address`
 			, `createdAt`
 			, `updatedAt`
 		FROM 
-			`seller`
+			`favorite`
+		
+	
+	</select>
+	
+	<select id="selectCountAddress" parameterType="String"
+	resultType="int">
+		SELECT
+			count(1)
+		FROM
+			`favorite`
 		WHERE
-			`id` = #{id}
+			`address` = #{address}
+	
+	
 	
 	</select>
   

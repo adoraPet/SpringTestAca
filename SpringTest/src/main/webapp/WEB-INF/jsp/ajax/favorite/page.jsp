@@ -20,7 +20,7 @@
 		<tbody>
 			<c:forEach var="favorite" items="${favoriteList }" varStatus="status">
 			<tr>
-				<td>${status.index }</td>
+				<td>${status.count }</td>
 				<td>${favorite.name }</td>
 				<td>${favorite.address }</td>
 			</tr>

@@ -1,9 +1,11 @@
 package io.adorapet.test.ajax.test.dao;
 
+import java.util.List;
+
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 
-import io.adorapet.test.jsp.model.Seller;
+import io.adorapet.test.ajax.test.model.Favorite;
 
 @Repository
 public interface FavoriteDAO {
@@ -12,8 +14,9 @@ public interface FavoriteDAO {
 			@Param("name") String name
 			, @Param("address") String address);
 	
-	public Seller selectFavorite();
-	
+	public List<Favorite> selectFavoriteList();
+
+	public int selectCountAddress(@Param("address") String address);
 	
 
 }

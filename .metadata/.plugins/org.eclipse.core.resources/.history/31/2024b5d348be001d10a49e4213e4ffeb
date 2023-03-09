@@ -1,0 +1,37 @@
+package io.adorapet.test.ajax.test.bo;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+
+import io.adorapet.test.ajax.User;
+import io.adorapet.test.ajax.test.dao.FavoriteDAO;
+import io.adorapet.test.jsp.dao.SellerDAO;
+import io.adorapet.test.jsp.model.Seller;
+@Service
+public class FavoriteBO {
+
+	@Autowired
+	private FavoriteDAO favoriteDAO;
+	
+	
+	public int insertFavorite(
+			String name
+			, String address
+			) {
+	
+		return favoriteDAO.insertFavorite(
+				name
+				, address
+				);
+	}
+	
+	public Seller getFavorite() {
+		return favoriteDAO.selectFavorite();
+	}
+	
+
+}
